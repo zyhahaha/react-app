@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import './home.less';
+import menuImg from '@/assets/imgs/menu.png';
+import shareImg from '@/assets/imgs/share.png';
 
 class Home extends Component {
   static propTypes = {
@@ -26,10 +28,28 @@ class Home extends Component {
     
     return (
       <div className="main">
-        <h3>home</h3>
-        <Link to="/about">
-          <h3 to="/about">about</h3>
-        </Link>        
+        {/* header */}
+        <div className="header">
+          <div className="head_wrap">
+            <p className="fl">
+              <img src={menuImg} alt=""/>
+            </p>
+            {/* <p className="nav_wrap"> */}
+              <span>计划</span>
+              <span className="nav_center">有X</span>
+              <span>圈子</span>
+            {/* </p> */}
+            <p className="fr">
+              <img src={shareImg} alt=""/>
+            </p>
+          </div>
+        </div>
+        {/* banner */}
+        <div className="banner">
+          <img src="" alt=""/>
+        </div>
+        {/* content */}
+        <div className="content"></div>
       </div>
     );
   }
