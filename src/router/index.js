@@ -4,7 +4,7 @@ import asyncComponent from '@/utils/asyncComponent';
 
 import home from "@/pages/home/home";
 const people = asyncComponent(() => import("@/pages/people/people"));
-// const helpcenter = asyncComponent(() => import("@/pages/helpcenter/helpcenter"));
+const MoreCourse = asyncComponent(() => import("@/pages/more_course/more_course"));
 // const production = asyncComponent(() => import("@/pages/production/production"));
 // const balance = asyncComponent(() => import("@/pages/balance/balance"));
 
@@ -16,10 +16,7 @@ export default class RouteConfig extends Component{
         <Switch>
           <Route path="/" exact component={home} />
           <Route path="/people" exact component={people} />
-          {/* <Route path="/record" component={record} />
-          <Route path="/helpcenter" component={helpcenter} />
-          <Route path="/production" component={production} />
-          <Route path="/balance" component={balance} /> */}
+          <Route path="/more_course" component={MoreCourse} />
           <Redirect to="/" />
         </Switch>
       </HashRouter>
