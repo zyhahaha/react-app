@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './menu.less';
 
 import noticeImg from '@/assets/imgs/menu/notice.png';
@@ -9,9 +10,11 @@ class Menu extends Component {
     return (
       <div className="menu">
           <div className="band_card">
-            <p className="avatar_wrap">
-              <img src="" alt=""/>
-            </p>
+            <Link to="/avatar1">
+              <p className="avatar_wrap">
+                <img src="" alt=""/>
+              </p>
+            </Link>
             <p className="nickname">木棍</p>
             <p className="summary">与更好的自己相遇。</p>
           </div>

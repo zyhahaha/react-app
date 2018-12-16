@@ -47,7 +47,7 @@ class Avatar extends Component {
             <p>课程</p>
           </div>
           <ul className="content_wrap">
-            <li>content</li>
+            <li>动态</li>
           </ul>
         </div>
       </div>

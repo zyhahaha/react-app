@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import './home.less';
 import menuImg from '@/assets/imgs/menu.png';
@@ -37,13 +37,15 @@ class Home extends Component {
         {/* header */}
         <div className="header">
           <div className="head_wrap">
-            <p className="fl">
-              <img src={menuImg} alt=""/>
-            </p>
+            <Link to="/menu">
+              <p className="fl">
+                <img src={menuImg} alt=""/>
+              </p>
+            </Link>
             {/* <p className="nav_wrap"> */}
               <span>计划</span>
-              <span className="nav_center">有X</span>
-              <span>圈子</span>
+              <Link to="/people"><span className="nav_center">有X</span></Link>
+              <Link to="/people"><span>圈子</span></Link>
             {/* </p> */}
             <p className="fr">
               <img className="share" src={shareImg} alt=""/>

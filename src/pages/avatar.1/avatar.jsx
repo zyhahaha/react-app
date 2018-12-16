@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './avatar.less';
 import backImg from '@/assets/imgs/back.png';
@@ -43,7 +44,9 @@ class Avatar extends Component {
         <div className="content">
           {/* nav */}
           <div className="nav">
-            <p className="grey">动态</p>
+            <Link to="/avatar">
+              <p className="grey">动态</p>
+            </Link>
             <p>课程</p>
           </div>
           <ul className="content_wrap">
