@@ -4,7 +4,6 @@ import asyncComponent from '@/utils/asyncComponent';
 
 import home from "@/pages/home/home";
 const people = asyncComponent(() => import("@/pages/people/people"));
-const MoreCourse = asyncComponent(() => import("@/pages/more_course/more_course"));
 const Avatar = asyncComponent(() => import("@/pages/avatar/avatar"));
 const Avatar1 = asyncComponent(() => import("@/pages/avatar.1/avatar"));
 const menu = asyncComponent(() => import("@/pages/menu/menu"));
@@ -17,7 +16,6 @@ export default class RouteConfig extends Component{
         <Switch>
           <Route path="/" exact component={home} />
           <Route path="/people" exact component={people} />
-          <Route path="/more_course" component={MoreCourse} />
           <Route path="/avatar" component={Avatar} />
           <Route path="/avatar1" component={Avatar1} />
           <Route path="/menu" component={menu} />
