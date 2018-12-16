@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './people.less';
 
 import menuImg from '@/assets/imgs/menu.png';
@@ -24,9 +25,9 @@ class People extends Component {
               <img src={menuImg} alt=""/>
             </p>
             {/* <p className="nav_wrap"> */}
-              <span>计划</span>
-              <span className="nav_center">有X</span>
-              <span>圈子</span>
+              <Link to="/"><span>计划</span></Link>
+              <Link to="/people"><span className="nav_center">有X</span></Link>
+              <Link to="/people"><span>圈子</span></Link>
             {/* </p> */}
             <p className="fr">
               <img className="share" src={shareImg} alt=""/>
