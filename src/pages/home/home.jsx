@@ -44,7 +44,7 @@ class Home extends Component {
             </Link>
             {/* <p className="nav_wrap"> */}
               <span>计划</span>
-              <Link to="/people"><span className="nav_center">有X</span></Link>
+              <Link to="/fancy"><span className="nav_center">有X</span></Link>
               <Link to="/people"><span>圈子</span></Link>
             {/* </p> */}
             <p className="fr">

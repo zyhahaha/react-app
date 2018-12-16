@@ -26,7 +26,7 @@ class People extends Component {
             </p>
             {/* <p className="nav_wrap"> */}
               <Link to="/"><span>计划</span></Link>
-              <Link to="/people"><span className="nav_center">有X</span></Link>
+              <Link to="/fancy"><span className="nav_center">有X</span></Link>
               <Link to="/people"><span>圈子</span></Link>
             {/* </p> */}
             <p className="fr">
