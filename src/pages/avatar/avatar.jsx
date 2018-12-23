@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './avatar.less';
 import backImg from '@/assets/imgs/back.png';
-import shareImg from '@/assets/imgs/share.png';
+import courseImg1 from '@/assets/imgs/course1.png';
 
 // img
 import cardImg from '@/assets/imgs/avatar/card.png';
@@ -43,11 +44,30 @@ class Avatar extends Component {
         <div className="content">
           {/* nav */}
           <div className="nav">
-            <p className="grey">动态</p>
+            <Link to="/avatar">
+              <p className="grey">动态</p>
+            </Link>
             <p>课程</p>
           </div>
           <ul className="content_wrap">
-            <li>动态</li>
+          <li>
+              <img src={courseImg1} alt="" className="fl" />
+              <div className="course_word_wrap fr">
+                <p className="course_title">
+                  “巧克力” 肌肉训练
+                </p>
+                <p className="course_content">
+                  想拥有好看的腹肌很重要的一点是皮脂要低，所以想要马甲线或者...
+                </p>
+                <p className="course_coach">
+                  主教练：赵子兴
+                </p>
+                <p className="course_join">42514人已加入</p>
+                <div className="button course_join_btn">
+                  加入课程
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

@@ -11,6 +11,10 @@ import courseImg1 from '@/assets/imgs/course1.png';
 import courseImg2 from '@/assets/imgs/course2.png';
 import courseImg3 from '@/assets/imgs/course3.png';
 
+function noneX() {
+  alert('none')
+}
+
 class Home extends Component {
   static propTypes = {
     // formData: PropTypes.object.isRequired,
@@ -28,7 +32,7 @@ class Home extends Component {
    * 已选择的商品数据
    * @type {Array}
    */
-  selectedProList = []; 
+  selectedProList = [];
 
   render() {
     
@@ -44,7 +48,7 @@ class Home extends Component {
             </Link>
             {/* <p className="nav_wrap"> */}
               <span>计划</span>
-              <Link to="/fancy"><span className="nav_center">有X</span></Link>
+              <span onClick={noneX} className="nav_center">有X</span>
               <Link to="/people"><span>圈子</span></Link>
             {/* </p> */}
             <p className="fr">

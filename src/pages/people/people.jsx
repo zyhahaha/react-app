@@ -14,7 +14,12 @@ import people4 from '@/assets/imgs/people/people4.png';
 import people5 from '@/assets/imgs/people/people5.png';
 import people6 from '@/assets/imgs/people/people6.png';
 
+function noneX() {
+  alert('none')
+}
+
 class People extends Component {
+
   render() {
     return (
       <div className="people">
@@ -26,7 +31,7 @@ class People extends Component {
             </p>
             {/* <p className="nav_wrap"> */}
               <Link to="/"><span>计划</span></Link>
-              <Link to="/fancy"><span className="nav_center">有X</span></Link>
+              <span onClick={noneX} className="nav_center">有X</span>
               <Link to="/people"><span>圈子</span></Link>
             {/* </p> */}
             <p className="fr">

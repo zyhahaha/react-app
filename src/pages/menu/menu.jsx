@@ -10,7 +10,7 @@ class Menu extends Component {
     return (
       <div className="menu">
           <div className="band_card">
-            <Link to="/avatar1">
+            <Link to="/avatar">
               <p className="avatar_wrap">
                 <img src="" alt=""/>
               </p>
