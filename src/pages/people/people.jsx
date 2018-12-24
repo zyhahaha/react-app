@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './people.less';
 
-import menuImg from '@/assets/imgs/menu.png';
-import shareImg from '@/assets/imgs/share.png';
+import PublicHeader from '@/components/header/header';
+
 import likeImg from '@/assets/imgs/like.png';
 import course1 from '@/assets/imgs/course1.png';
 // img
@@ -14,31 +14,13 @@ import people4 from '@/assets/imgs/people/people4.png';
 import people5 from '@/assets/imgs/people/people5.png';
 import people6 from '@/assets/imgs/people/people6.png';
 
-function noneX() {
-  alert('none')
-}
-
 class People extends Component {
 
   render() {
     return (
       <div className="people">
         {/* header */}
-        <div className="header">
-          <div className="head_wrap">
-            <p className="fl">
-              <img src={menuImg} alt=""/>
-            </p>
-            {/* <p className="nav_wrap"> */}
-              <Link to="/"><span>计划</span></Link>
-              <span onClick={noneX} className="nav_center">有X</span>
-              <Link to="/people"><span>圈子</span></Link>
-            {/* </p> */}
-            <p className="fr">
-              <img className="share" src={shareImg} alt=""/>
-            </p>
-          </div>
-        </div>
+        <PublicHeader />
         {/* nav */}
         <div className="nav">
           <p className="fl">热门</p>

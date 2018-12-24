@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import './home.less';
-import menuImg from '@/assets/imgs/menu.png';
-import shareImg from '@/assets/imgs/share.png';
+
+import PublicHeader from '@/components/header/header';
+
 import bannerImg from '@/assets/imgs/home_banner.png';
 
 // img
 import courseImg1 from '@/assets/imgs/course1.png';
 import courseImg2 from '@/assets/imgs/course2.png';
 import courseImg3 from '@/assets/imgs/course3.png';
-
-function noneX() {
-  alert('none')
-}
 
 class Home extends Component {
   static propTypes = {
@@ -39,23 +36,7 @@ class Home extends Component {
     return (
       <div className="main">
         {/* header */}
-        <div className="header">
-          <div className="head_wrap">
-            <Link to="/menu">
-              <p className="fl">
-                <img src={menuImg} alt=""/>
-              </p>
-            </Link>
-            {/* <p className="nav_wrap"> */}
-              <span>计划</span>
-              <span onClick={noneX} className="nav_center">有X</span>
-              <Link to="/people"><span>圈子</span></Link>
-            {/* </p> */}
-            <p className="fr">
-              <img className="share" src={shareImg} alt=""/>
-            </p>
-          </div>
-        </div>
+        <PublicHeader />
         {/* banner */}
         <div className="banner">
           <img src={bannerImg} alt=""/>
