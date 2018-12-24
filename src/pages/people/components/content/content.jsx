@@ -12,7 +12,7 @@ import people4 from '@/assets/imgs/people/people4.png';
 import people5 from '@/assets/imgs/people/people5.png';
 import people6 from '@/assets/imgs/people/people6.png';
 
-class People extends Component {
+class PeopleContent extends Component {
 
   render() {
     return (
@@ -147,4 +147,4 @@ class People extends Component {
   }
 }
 
-export default People;
+export default PeopleContent;
