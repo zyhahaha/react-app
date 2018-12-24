@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './content.less';
 
 import likeImg from '@/assets/imgs/like.png';
-import course1 from '@/assets/imgs/course1.png';
+
 // img
 import people1 from '@/assets/imgs/people/people1.png';
 import people2 from '@/assets/imgs/people/people2.png';
@@ -12,135 +12,100 @@ import people4 from '@/assets/imgs/people/people4.png';
 import people5 from '@/assets/imgs/people/people5.png';
 import people6 from '@/assets/imgs/people/people6.png';
 
+let json = {
+  list: [
+    {
+      title: '雨天和健身房',
+      nickname: 'NAna',
+      avatarImg: people1,
+      likeNum: '2258'
+    },
+    {
+      title: '雨天和健身房',
+      nickname: 'NAna',
+      avatarImg: people2,
+      likeNum: '2258'
+    },
+    {
+      title: '雨天和健身房',
+      nickname: 'NAna',
+      avatarImg: people3,
+      likeNum: '2258'
+    },
+    {
+      title: '雨天和健身房',
+      nickname: 'NAna',
+      avatarImg: people4,
+      likeNum: '2258'
+    },
+    {
+      title: '雨天和健身房',
+      nickname: 'NAna',
+      avatarImg: people5,
+      likeNum: '2258'
+    },
+    {
+      title: '雨天和健身房',
+      nickname: 'NAna',
+      avatarImg: people6,
+      likeNum: '2258'
+    }
+  ]
+}
+
+function ListItem(props) {
+  let item = props.item || {};
+  return (
+    <li className="fl">
+      <img src={item.avatarImg} alt="" />
+      <div className="item_wrap">
+        <p className="title">{item.title}</p>
+        <p className="portrait fl">
+          <span></span>
+          {item.nickname}
+          </p>
+        <p className="portrait fr">
+          <span className="like">
+            <img src={likeImg} alt="" />
+          </span>
+          {item.likeNum}
+          </p>
+      </div>
+    </li>
+  )
+}
+
+function ContentListFl(props) {
+  const list = props.list;
+  const listItems = list.map((item, index) =>
+    <ListItem key={index.toString()} item={item} />
+  );
+  return (
+    <ul className="fl">
+      {listItems}
+    </ul>
+  );
+}
+
+function ContentListFr(props) {
+  const list = props.list;
+  const listItems = list.map((item, index) =>
+    <ListItem key={index.toString()} item={item} />
+  );
+  return (
+    <ul className="fr">
+      {listItems}
+    </ul>
+  );
+}
+
 class PeopleContent extends Component {
 
   render() {
     return (
       <div className="content">
-        {/* fl */}
-        <ul className="fl">
-          <li className="fl">
-            <img src={course1} alt="" />
-            <div className="item_wrap">
-              <p className="title">雨天和健身房</p>
-              <p className="portrait fl">
-                <span></span>
-                NAna
-                </p>
-              <p className="portrait fr">
-                <span className="like">
-                  <img src={likeImg} alt="" />
-                </span>
-                2258
-                </p>
-            </div>
-          </li>
-          {/* 2 */}
-          <li className="fr">
-            <img src={people1} alt="" />
-            <div className="item_wrap">
-              <p className="title">雨天和健身房</p>
-              <p className="portrait fl">
-                <span></span>
-                NAna
-                </p>
-              <p className="portrait fr">
-                <span className="like">
-                  <img src={likeImg} alt="" />
-                </span>
-                78
-                </p>
-            </div>
-          </li>
-          {/* 3 */}
-          <li className="fl">
-            <img src={people2} alt="" />
-            <div className="item_wrap">
-              <p className="title">雨天和健身房</p>
-              <p className="portrait fl">
-                <span></span>
-                NAna
-                </p>
-              <p className="portrait fr">
-                <span className="like">
-                  <img src={likeImg} alt="" />
-                </span>
-                12
-                </p>
-            </div>
-          </li>
-        </ul>
-        {/* fr */}
-        <ul className="fr">
-          {/* 4 */}
-          <li className="fr">
-            <img src={people3} alt="" />
-            <div className="item_wrap">
-              <p className="title">雨天和健身房</p>
-              <p className="portrait fl">
-                <span></span>
-                NAna
-                </p>
-              <p className="portrait fr">
-                <span className="like">
-                  <img src={likeImg} alt="" />
-                </span>
-                2144
-                </p>
-            </div>
-          </li>
-          {/* 5 */}
-          <li className="fl">
-            <img src={people4} alt="" />
-            <div className="item_wrap">
-              <p className="title">雨天和健身房</p>
-              <p className="portrait fl">
-                <span></span>
-                NAna
-                </p>
-              <p className="portrait fr">
-                <span className="like">
-                  <img src={likeImg} alt="" />
-                </span>
-                1234
-                </p>
-            </div>
-          </li>
-          {/* 6 */}
-          <li className="fr">
-            <img src={people5} alt="" />
-            <div className="item_wrap">
-              <p className="title">雨天和健身房</p>
-              <p className="portrait fl">
-                <span></span>
-                NAna
-                </p>
-              <p className="portrait fr">
-                <span className="like">
-                  <img src={likeImg} alt="" />
-                </span>
-                1234
-                </p>
-            </div>
-          </li>
-          {/* 7 */}
-          <li className="fl">
-            <img src={people6} alt="" />
-            <div className="item_wrap">
-              <p className="title">雨天和健身房</p>
-              <p className="portrait fl">
-                <span></span>
-                NAna
-                </p>
-              <p className="portrait fr">
-                <span className="like">
-                  <img src={likeImg} alt="" />
-                </span>
-                1234
-                </p>
-            </div>
-          </li>
-        </ul>
+        <ContentListFl list={json.list} />
+        <ContentListFr list={json.list} />
       </div>
 
     );
