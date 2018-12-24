@@ -1,0 +1,22 @@
+p, img, ul, li{
+  margin: 0;
+  padding: 0;
+}
+ul, li{
+  list-style:none;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.button{
+  width: 150px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  background-color: #353c6d;
+}
