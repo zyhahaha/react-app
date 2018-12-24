@@ -9,16 +9,18 @@ function noneX() {
   alert('none')
 }
 
+function showMenu() {
+  
+}
+
 class PublicHeader extends Component {
   render() {
     return (
       <div className="header">
         <div className="head_wrap">
-          <Link to="/menu">
-            <p className="fl">
-              <img src={menuImg} alt=""/>
-            </p>
-          </Link>
+          <p className="fl" onClick={showMenu}>
+            <img src={menuImg} alt=""/>
+          </p>
           {/* <p className="nav_wrap"> */}
             <span>计划</span>
             <span onClick={noneX} className="nav_center">有X</span>

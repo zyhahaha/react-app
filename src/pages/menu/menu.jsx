@@ -8,11 +8,12 @@ import collectImg from '@/assets/imgs/menu/collect.png';
 class Menu extends Component {
   render() {
     return (
-      <div className="menu">
+      <div className="menuWrap">
+        <div className="menu">
           <div className="band_card">
             <Link to="/avatar">
               <p className="avatar_wrap">
-                <img src="" alt=""/>
+                <img src="" alt="" />
               </p>
             </Link>
             <p className="nickname">木棍</p>
@@ -21,15 +22,16 @@ class Menu extends Component {
           <div className="item_wrap">
             <ul>
               <li>
-                <img src={noticeImg} alt=""/>
+                <img src={noticeImg} alt="" />
                 <span>我的消息</span>
               </li>
               <li>
-                <img src={collectImg} alt=""/>
+                <img src={collectImg} alt="" />
                 <span>我的收藏</span>
               </li>
             </ul>
           </div>
+        </div>
       </div>
     )
   }

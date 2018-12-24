@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import './home.less';
 
+import Menu from '@/pages/menu/menu';
 import PublicHeader from '@/components/header/header';
 import HomeContent from './components/content/content';
 
@@ -50,6 +51,8 @@ class Home extends Component {
         </div>
         {/* content */}
         <HomeContent />
+        {/* menu */}
+        {/* <Menu /> */}
       </div>
     );
   }

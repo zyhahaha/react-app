@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.2.6",
     "axios": "^0.17.1",
     "fastclick": "^1.0.6",
     "immutable": "^3.8.2",
