@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import './people.less';
 
+import Menu from '@/components/menu/menu';
 import PublicHeader from '@/components/header/header';
 import HomeContent from './components/content/content';
 
@@ -18,7 +19,9 @@ class People extends Component {
           <p className="fr">关注</p>
         </div>
         {/* content */}
-        <HomeContent />  
+        <HomeContent />
+        {/* Menu */}
+        {/* <Menu /> */}
       </div>
     );
   }
