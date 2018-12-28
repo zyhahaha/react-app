@@ -10,9 +10,12 @@ function noneX() {
 }
 
 class PublicHeader extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-  changeMenuState(data){
-    this.props.changeMenuState(data)
+  changeMenuState = data => {
+    // this.props.changeMenuState(data)
   }
 
   render() {
