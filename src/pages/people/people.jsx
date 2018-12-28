@@ -7,12 +7,19 @@ import PublicHeader from '@/components/header/header';
 import HomeContent from './components/content/content';
 
 class People extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  state = {
+    isShowMenu: false
+  }
 
   render() {
     return (
       <div className="people">
         {/* header */}
-        <PublicHeader />
+        <PublicHeader isShowMenu={this.state.isShowMenu} />
         {/* nav */}
         <div className="nav">
           <p className="fl">热门</p>
@@ -21,7 +28,7 @@ class People extends Component {
         {/* content */}
         <HomeContent />
         {/* Menu */}
-        {/* <Menu /> */}
+        {this.state.isShowMenu && <Menu />}
       </div>
     );
   }

@@ -9,16 +9,17 @@ function noneX() {
   alert('none')
 }
 
-function showMenu() {
-  
-}
-
 class PublicHeader extends Component {
+
+  changeMenuState(data){
+    this.props.changeMenuState(data)
+  }
+
   render() {
     return (
       <div className="header">
         <div className="head_wrap">
-          <p className="fl" onClick={showMenu}>
+          <p className="fl" onClick={this.changeMenuState(true)}>
             <img src={menuImg} alt=""/>
           </p>
           {/* <p className="nav_wrap"> */}

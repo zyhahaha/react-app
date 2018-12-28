@@ -10,30 +10,30 @@ import HomeContent from './components/content/content';
 import bannerImg from '@/assets/imgs/home_banner.png';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   static propTypes = {
-    // formData: PropTypes.object.isRequired,
-    // saveFormData: PropTypes.func.isRequired,
-    // saveImg: PropTypes.func.isRequired,
-    // clearData: PropTypes.func.isRequired,
-    // clearSelected: PropTypes.func.isRequired,
+    // formData: PropTypes.object.isRequired
   }
 
   state = {
-    alertStatus: false, //弹框状态
-    alertTip: '', //弹框提示文字
+    isShowMenu: false
   }
-  /**
-   * 已选择的商品数据
-   * @type {Array}
-   */
-  selectedProList = [];
+
+  changeMenuState = isShowMenu => {
+    this.setState({
+      isShowMenu
+    })
+  }
 
   render() {
     
     return (
       <div className="main">
         {/* header */}
-        <PublicHeader />
+        <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} />
         {/* banner */}
         <div className="banner">
           <img src={bannerImg} alt=""/>
@@ -52,7 +52,7 @@ class Home extends Component {
         {/* content */}
         <HomeContent />
         {/* menu */}
-        {/* <Menu /> */}
+        {this.state.isShowMenu && <Menu />}
       </div>
     );
   }
