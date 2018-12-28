@@ -22,7 +22,7 @@ class PublicHeader extends Component {
     return (
       <div className="header">
         <div className="head_wrap">
-          <p className="fl" onClick={this.changeMenuState(true)}>
+          <p className="fl" onClick={this.props.changeMenuState}>
             <img src={menuImg} alt=""/>
           </p>
           {/* <p className="nav_wrap"> */}

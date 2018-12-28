@@ -24,7 +24,7 @@ class Home extends Component {
 
   changeMenuState = isShowMenu => {
     this.setState({
-      isShowMenu
+      isShowMenu: true
     })
   }
 
