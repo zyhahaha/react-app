@@ -8,6 +8,59 @@ import courseImg1 from '@/assets/imgs/course1.png';
 // img
 import cardImg from '@/assets/imgs/avatar/card.png';
 
+let json = {
+  info: {
+
+  },
+  courseList: [
+    {
+      title: '“巧克力” 肌肉训练',
+      content: '想拥有好看的腹肌很重要的一点是皮脂要低，所以想要马甲线或者...',
+      coach: 'Sutuny',
+      durationTim: '330分44秒',
+      img: courseImg1,
+      joinNum: 42514,
+      joinState: 0
+    }
+  ]
+}
+
+function ListItem(props) {
+  let item = props.item || {};
+  return (
+    <li>
+      <img src={item.img} alt="" className="fl" />
+      <div className="course_word_wrap fr">
+        <p className="course_title">
+          {item.title}
+        </p>
+        <p className="course_content">
+          {item.content}
+        </p>
+        <p className="course_coach">
+          主教练：{item.coach}
+          </p>
+        <p className="course_join">{item.joinNum}人已加入</p>
+        <div className="button course_join_btn">
+          加入课程
+          </div>
+      </div>
+    </li>
+  )
+}
+
+function ContentList(props) {
+  const list = props.list;
+  const listItems = list.map((item, index) =>
+    <ListItem key={index.toString()} item={item} />
+  );
+  return (
+    <ul className="content_wrap">
+      {listItems}
+    </ul>
+  );
+}
+
 class Avatar extends Component {
   render() {
     return (
@@ -49,7 +102,8 @@ class Avatar extends Component {
             </Link>
             <p>课程</p>
           </div>
-          <ul className="content_wrap">
+          <ContentList list={json.courseList} />
+          {/* <ul className="content_wrap">
           <li>
               <img src={courseImg1} alt="" className="fl" />
               <div className="course_word_wrap fr">
@@ -68,7 +122,7 @@ class Avatar extends Component {
                 </div>
               </div>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     );
