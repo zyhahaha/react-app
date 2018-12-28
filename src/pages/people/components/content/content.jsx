@@ -4,54 +4,7 @@ import './content.less';
 
 import likeImg from '@/assets/imgs/like.png';
 
-// img
-import people1 from '@/assets/imgs/people/people1.png';
-import people2 from '@/assets/imgs/people/people2.png';
-import people3 from '@/assets/imgs/people/people3.png';
-import people4 from '@/assets/imgs/people/people4.png';
-import people5 from '@/assets/imgs/people/people5.png';
-import people6 from '@/assets/imgs/people/people6.png';
-
-let json = {
-  list: [
-    {
-      title: '雨天和健身房',
-      nickname: 'NAna',
-      avatarImg: people1,
-      likeNum: '2258'
-    },
-    {
-      title: '雨天和健身房',
-      nickname: 'NAna',
-      avatarImg: people2,
-      likeNum: '2258'
-    },
-    {
-      title: '雨天和健身房',
-      nickname: 'NAna',
-      avatarImg: people3,
-      likeNum: '2258'
-    },
-    {
-      title: '雨天和健身房',
-      nickname: 'NAna',
-      avatarImg: people4,
-      likeNum: '2258'
-    },
-    {
-      title: '雨天和健身房',
-      nickname: 'NAna',
-      avatarImg: people5,
-      likeNum: '2258'
-    },
-    {
-      title: '雨天和健身房',
-      nickname: 'NAna',
-      avatarImg: people6,
-      likeNum: '2258'
-    }
-  ]
-}
+import { peopleData } from '@/assets/api/api.js';
 
 function ListItem(props) {
   let item = props.item || {};
@@ -104,8 +57,8 @@ class PeopleContent extends Component {
   render() {
     return (
       <div className="content">
-        <ContentListFl list={json.list} />
-        <ContentListFr list={json.list} />
+        <ContentListFl list={peopleData.list} />
+        <ContentListFr list={peopleData.list} />
       </div>
 
     );

@@ -1,50 +1,11 @@
 import React, { Component } from 'react';
 import './content.less';
 
-// img
-import courseImg1 from '@/assets/imgs/course1.png';
-import courseImg2 from '@/assets/imgs/course2.png';
-import courseImg3 from '@/assets/imgs/course3.png';
-
-// mocha
-let json = {
-  list: [
-    {
-      title: '“巧克力” 肌肉训练',
-      content: '想拥有好看的腹肌很重要的一点是皮脂要低，所以想要马甲线或者...',
-      coach: '赵子兴',
-      img: courseImg1,
-      joinNum: 42514
-    },
-    {
-      title: '“巧克力” 肌肉训练',
-      content: '想拥有好看的腹肌很重要的一点是皮脂要低，所以想要马甲线或者...',
-      coach: '赵子兴',
-      img: courseImg2,
-      joinNum: 42514
-    },
-    {
-      title: '“巧克力” 肌肉训练',
-      content: '想拥有好看的腹肌很重要的一点是皮脂要低，所以想要马甲线或者...',
-      coach: '赵子兴',
-      img: courseImg3,
-      joinNum: 42514
-    },
-    {
-      title: '“巧克力” 肌肉训练',
-      content: '想拥有好看的腹肌很重要的一点是皮脂要低，所以想要马甲线或者...',
-      coach: '赵子兴',
-      img: courseImg1,
-      joinNum: 42514
-    }
-  ]
-};
-
 function ListItem(props) {
   let item = props.item || {};
   return (
     <li>
-      <img src={courseImg1} alt="" className="fl" />
+      <img src={item.img} alt="" className="fl" />
       <div className="course_word_wrap fr">
         <p className="course_title">
           {item.title}
@@ -95,7 +56,7 @@ class HomeContent extends Component {
             <p></p>
           </div>
           {/* list */}
-          <ContentList list={json.list} />
+          <ContentList list={this.props.homeContentList} />
         </div>
       </div>
     );
