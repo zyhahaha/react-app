@@ -11,6 +11,9 @@ import people4 from '@/assets/imgs/people/people4.png';
 import people5 from '@/assets/imgs/people/people5.png';
 import people6 from '@/assets/imgs/people/people6.png';
 
+// avatar
+import cardImg from '@/assets/imgs/avatar/card.png';
+
 let homeContentData = {
   bannerData: {
     title: '马甲线速成班',
@@ -96,9 +99,32 @@ let peopleData = {
       likeNum: '2258'
     }
   ]
-}
+};
+
+let avatarData = {
+  info: {
+    cardImg: cardImg,
+    avatar: '',
+    nickname: 'test赵',
+    summary: '简介',
+    attentionNum: 1234,
+    fansNum: 233
+  },
+  courseList: [
+    {
+      title: '“巧克力” 肌肉训练',
+      content: '想拥有好看的腹肌很重要的一点是皮脂要低，所以想要马甲线或者...',
+      coach: 'Sutuny',
+      durationTim: '330分44秒',
+      img: courseImg1,
+      joinNum: 42514,
+      joinState: 0
+    }
+  ]
+};
 
 export {
   homeContentData,
-  peopleData
+  peopleData,
+  avatarData
 };
