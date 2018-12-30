@@ -4,7 +4,8 @@ import './content.less';
 
 import likeImg from '@/assets/imgs/like.png';
 
-import { peopleData } from '@/assets/api/api.js';
+import axios from 'axios';
+// import { peopleData } from '@/assets/api/api.js';
 
 function ListItem(props) {
   let item = props.item || {};
@@ -53,12 +54,31 @@ function ContentListFr(props) {
 }
 
 class PeopleContent extends Component {
+  constructor(props) {
+    super(props);
+    this.getPeopleData();
+  }
 
+  state = {
+    peopleData: {}
+  }
+
+  getPeopleData() {
+    axios.get('http://localhost:8088/peopleData').then(res => {
+        let peopleData = res.data.data;
+        this.setState({
+          peopleData
+        })
+      });
+  }
+  // return axios.get('http://localhost:8088/peopleData').then(res => {
+  //   let peopleData = res.data.data;
+  // });
   render() {
     return (
       <div className="content">
-        <ContentListFl list={peopleData.list} />
-        <ContentListFr list={peopleData.list} />
+        {this.state.peopleData.list && <ContentListFl list={this.state.peopleData.list} />}
+        {this.state.peopleData.list && <ContentListFr list={this.state.peopleData.list} />}
       </div>
 
     );

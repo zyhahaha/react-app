@@ -8,11 +8,13 @@ import PublicHeader from '@/components/header/header';
 import HomeContent from './components/content/content';
 import BannerEl from './components/banner/banner';
 
-import { homeContentData } from '@/assets/api/api.js';
+import axios from 'axios';
+// import { homeContentData } from '@/assets/api/api.js';
 
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.getHomeContentData();
   }
 
   static propTypes = {
@@ -20,7 +22,8 @@ class Home extends Component {
   }
 
   state = {
-    isShowMenu: false
+    isShowMenu: false,
+    homeContentData: {}
   }
 
   changeMenuState = isShowMenu => {
@@ -29,16 +32,25 @@ class Home extends Component {
     })
   }
 
+  getHomeContentData(){
+    axios.get('http://localhost:8088/homeContentData').then(res => {
+      let homeContentData = res.data.data;
+      this.setState({
+        homeContentData
+      })
+    });
+  }
+
+
   render() {
-    
     return (
       <div className="main">
         {/* header */}
         <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} />
         {/* banner */}
-        <BannerEl bannerData={homeContentData.bannerData} />
+        {this.state.homeContentData.bannerData && <BannerEl bannerData={this.state.homeContentData.bannerData} />}
         {/* content */}
-        <HomeContent homeContentList={homeContentData.list} />
+        {this.state.homeContentData.list && <HomeContent homeContentList={this.state.homeContentData.list} />}
         {/* menu */}
         {this.state.isShowMenu && <Menu />}
       </div>

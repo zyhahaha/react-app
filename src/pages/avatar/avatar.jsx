@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import './avatar.less';
 import backImg from '@/assets/imgs/back.png';
 
-import {avatarData} from '@/assets/api/api.js';
+import axios from 'axios';
+// import {avatarData} from '@/assets/api/api.js';
 
 function ListItem(props) {
   let item = props.item || {};
@@ -20,7 +21,7 @@ function ListItem(props) {
         </p>
         <p className="course_coach">
           主教练：{item.coach}
-          </p>
+        </p>
         <p className="course_join">{item.joinNum}人已加入</p>
         <div className="button course_join_btn">
           加入课程
@@ -42,15 +43,15 @@ function ContentList(props) {
   );
 }
 
-function HeaderCard(props){
+function HeaderCard(props) {
   let infoData = props.infoData;
   return (
     <div className="header_card">
       <p className="card_img_wrap">
-        <img src={infoData.cardImg} alt=""/>
+        <img src={infoData.cardImg} alt="" />
       </p>
       <p className="avatar_img">
-        <img src="" alt=""/>
+        <img src="" alt="" />
       </p>
       <p className="nickname">
         {infoData.nickname}
@@ -65,6 +66,24 @@ function HeaderCard(props){
 }
 
 class Avatar extends Component {
+  constructor(props) {
+    super(props);
+    this.getAvatarData();
+  }
+  
+  state = {
+    avatarData: {}
+  }
+
+  getAvatarData() {
+    axios.get('http://localhost:8088/avatarData').then(res => {
+        let avatarData = res.data.data;
+        this.setState({
+          avatarData
+        })
+      });
+  }
+
   render() {
     return (
       <div className="avatar-container">
@@ -72,7 +91,7 @@ class Avatar extends Component {
         <div className="header">
           <div className="head_wrap">
             <p className="fl">
-              <img src={backImg} alt=""/>
+              <img src={backImg} alt="" />
             </p>
             <p className="fr">
               <span>已关注</span>
@@ -80,7 +99,7 @@ class Avatar extends Component {
           </div>
         </div>
         {/* header card */}
-        <HeaderCard infoData={avatarData.info}></HeaderCard>
+        {this.state.avatarData.info && <HeaderCard infoData={this.state.avatarData.info}></HeaderCard>}
         {/* content */}
         <div className="content">
           {/* nav */}
@@ -90,7 +109,7 @@ class Avatar extends Component {
             </Link>
             <p>课程</p>
           </div>
-          <ContentList list={avatarData.courseList} />
+          {this.state.avatarData.courseList && <ContentList list={this.state.avatarData.courseList} />}
         </div>
       </div>
     );
