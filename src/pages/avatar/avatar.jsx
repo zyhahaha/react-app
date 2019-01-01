@@ -76,7 +76,7 @@ class Avatar extends Component {
   }
 
   getAvatarData() {
-    axios.get('http://localhost:8088/avatarData').then(res => {
+    axios.get('http://192.168.1.11:8088/avatarData').then(res => {
         let avatarData = res.data.data;
         this.setState({
           avatarData

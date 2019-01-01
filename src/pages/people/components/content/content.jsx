@@ -64,7 +64,7 @@ class PeopleContent extends Component {
   }
 
   getPeopleData() {
-    axios.get('http://localhost:8088/peopleData').then(res => {
+    axios.get('http://192.168.1.11:8088/peopleData').then(res => {
         let peopleData = res.data.data;
         this.setState({
           peopleData

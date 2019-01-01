@@ -33,7 +33,7 @@ class Home extends Component {
   }
 
   getHomeContentData(){
-    axios.get('http://localhost:8088/homeContentData').then(res => {
+    axios.get('http://192.168.1.11:8088/homeContentData').then(res => {
       let homeContentData = res.data.data;
       this.setState({
         homeContentData
