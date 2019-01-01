@@ -15,11 +15,17 @@ class People extends Component {
     isShowMenu: false
   }
 
+  changeMenuState = isShowMenu => {
+    this.setState({
+      isShowMenu: true
+    })
+  }
+
   render() {
     return (
       <div className="people">
         {/* header */}
-        <PublicHeader isShowMenu={this.state.isShowMenu} />
+        <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} />
         {/* nav */}
         <div className="nav">
           <p className="fl">热门</p>
