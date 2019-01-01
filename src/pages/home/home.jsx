@@ -46,7 +46,7 @@ class Home extends Component {
     return (
       <div className="main">
         {/* header */}
-        <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} />
+        <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} checkName="home" />
         {/* banner */}
         {this.state.homeContentData.bannerData && <BannerEl bannerData={this.state.homeContentData.bannerData} />}
         {/* content */}

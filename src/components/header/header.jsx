@@ -26,9 +26,9 @@ class PublicHeader extends Component {
             <img src={menuImg} alt=""/>
           </p>
           {/* <p className="nav_wrap"> */}
-          <Link to="/"><span>计划</span></Link>
+          <Link to="/"><span className={this.props.checkName === 'home' ? 'check' : ''}>计划</span></Link>
             <span onClick={noneX} className="nav_center">有X</span>
-            <Link to="/people"><span>圈子</span></Link>
+            <Link to="/people"><span className={this.props.checkName === 'people' ? 'check' : ''}>圈子</span></Link>
           {/* </p> */}
           <p className="fr">
             <img className="share" src={shareImg} alt=""/>

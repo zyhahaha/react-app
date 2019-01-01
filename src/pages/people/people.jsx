@@ -25,10 +25,10 @@ class People extends Component {
     return (
       <div className="people">
         {/* header */}
-        <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} />
+        <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} checkName="people" />
         {/* nav */}
         <div className="nav">
-          <p className="fl">热门</p>
+          <p className="fl"><span>热门</span></p>
           <p className="fr">关注</p>
         </div>
         {/* content */}
