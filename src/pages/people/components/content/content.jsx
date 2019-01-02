@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import http from '@/http/http.js';
 // import { Link } from 'react-router-dom';
 import './content.less';
 
 import likeImg from '@/assets/imgs/like.png';
 
-import axios from 'axios';
+// import axios from 'axios';
 // import { peopleData } from '@/assets/api/api.js';
 
 function ListItem(props) {
@@ -64,7 +65,7 @@ class PeopleContent extends Component {
   }
 
   getPeopleData() {
-    axios.get('http://192.168.1.11:8088/peopleData').then(res => {
+    http.get('/peopleData').then(res => {
         let peopleData = res.data.data;
         this.setState({
           peopleData

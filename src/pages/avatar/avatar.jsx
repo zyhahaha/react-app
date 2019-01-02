@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import http from '@/http/http.js';
 import { Link } from 'react-router-dom';
 
 import './avatar.less';
@@ -76,7 +77,7 @@ class Avatar extends Component {
   }
 
   getAvatarData() {
-    axios.get('http://192.168.1.11:8088/avatarData').then(res => {
+    http.get('/avatarData').then(res => {
         let avatarData = res.data.data;
         this.setState({
           avatarData

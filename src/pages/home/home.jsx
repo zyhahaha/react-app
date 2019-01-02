@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import http from '@/http/http.js';
 // import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import './home.less';
@@ -8,7 +9,7 @@ import PublicHeader from '@/components/header/header';
 import HomeContent from './components/content/content';
 import BannerEl from './components/banner/banner';
 
-import axios from 'axios';
+// import axios from 'axios';
 // import { homeContentData } from '@/assets/api/api.js';
 
 class Home extends Component {
@@ -33,7 +34,7 @@ class Home extends Component {
   }
 
   getHomeContentData(){
-    axios.get('http://192.168.1.11:8088/homeContentData').then(res => {
+    http.get('/homeContentData').then(res => {
       let homeContentData = res.data.data;
       this.setState({
         homeContentData
