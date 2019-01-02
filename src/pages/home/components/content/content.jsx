@@ -42,7 +42,7 @@ class HomeContent extends Component {
   render() {
 
     return (
-      <div className="content">
+      <div className="home-content">
         {/* card */}
         <div className="card_list">
           <p className="dynamic fl">精选动态</p>

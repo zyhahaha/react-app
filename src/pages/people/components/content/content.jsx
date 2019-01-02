@@ -77,7 +77,7 @@ class PeopleContent extends Component {
   // });
   render() {
     return (
-      <div className="content">
+      <div className="people-content">
         {this.state.peopleData.list && <ContentListFl list={this.state.peopleData.list} />}
         {this.state.peopleData.list && <ContentListFr list={this.state.peopleData.list} />}
       </div>
