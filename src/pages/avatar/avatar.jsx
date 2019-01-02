@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './avatar.less';
 import backImg from '@/assets/imgs/back.png';
 
-import axios from 'axios';
+// import axios from 'axios';
 // import {avatarData} from '@/assets/api/api.js';
 
 function ListItem(props) {
