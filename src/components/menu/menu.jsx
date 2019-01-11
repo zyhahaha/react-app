@@ -6,10 +6,18 @@ import noticeImg from '@/assets/imgs/menu/notice.png';
 import collectImg from '@/assets/imgs/menu/collect.png';
 
 class Menu extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  // state = {
+  //   isShowMenu: false,
+  // }
+
   render() {
     return (
-      <div className="menuWrap">
-        <div className="menu">
+      <div className={this.props.isShowMenu ? 'showMenuWrap menuWrap' : 'menuWrap'}>
+        <div className={this.props.isShowMenu ? 'showMenu menu' : 'menu'}>
           <div className="band_card">
             <Link to="/avatar">
               <p className="avatar_wrap">
@@ -32,6 +40,7 @@ class Menu extends Component {
             </ul>
           </div>
         </div>
+        <div className={this.props.isShowMenu ? 'show menu-drawer-overlay' : 'menu-drawer-overlay'}></div>
       </div>
     )
   }

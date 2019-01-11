@@ -53,7 +53,8 @@ class Home extends Component {
         {/* content */}
         {this.state.homeContentData.list && <HomeContent homeContentList={this.state.homeContentData.list} />}
         {/* menu */}
-        {this.state.isShowMenu && <Menu />}
+        {/* {this.state.isShowMenu && <Menu />} */}
+        {<Menu isShowMenu={this.state.isShowMenu} />}
       </div>
     );
   }

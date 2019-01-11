@@ -4,12 +4,36 @@
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: -100;
+  &.showMenuWrap{
+    z-index: 100;
+  }
+}
+
+.menu-drawer-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(125, 125, 125, 0.5);
+  display: none;
+  z-index: -1;
+  &.show{
+    display: block;
+  }
 }
 .menu{
+  transform: translateX(-130%);
+  transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+  will-change: transform;
+
   width: 75%;
   height: 100%;
   background-color: #fff;
+  &.showMenu{
+    transform: translateX(0%);
+  }
   .band_card{
     padding: 30px 0px;
     background-color: #303fa2;
