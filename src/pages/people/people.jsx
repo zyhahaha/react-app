@@ -27,7 +27,7 @@ class People extends Component {
         {/* header */}
         <PublicHeader isShowMenu={this.state.isShowMenu} changeMenuState={this.changeMenuState} checkName="people" />
         {/* nav */}
-        <div className="nav">
+        <div className="people__nav">
           <p className="fl"><span>热门</span></p>
           <p className="fr">关注</p>
         </div>

@@ -13,14 +13,14 @@ function ListItem(props) {
   return (
     <li className="fl">
       <img src={item.avatarImg} alt="" />
-      <div className="item_wrap">
-        <p className="title">{item.title}</p>
-        <p className="portrait fl">
+      <div className="people__wrap">
+        <p className="people__title">{item.title}</p>
+        <p className="people__portrait fl">
           <span></span>
           {item.nickname}
           </p>
-        <p className="portrait fr">
-          <span className="like">
+        <p className="people__portrait fr">
+          <span className="people__like">
             <img src={likeImg} alt="" />
           </span>
           {item.likeNum}
@@ -77,7 +77,7 @@ class PeopleContent extends Component {
   // });
   render() {
     return (
-      <div className="people-content">
+      <div className="people__content">
         {this.state.peopleData.list && <ContentListFl list={this.state.peopleData.list} />}
         {this.state.peopleData.list && <ContentListFr list={this.state.peopleData.list} />}
       </div>

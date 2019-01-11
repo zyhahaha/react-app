@@ -31,7 +31,7 @@ function ContentList(props) {
     <ListItem key={index.toString()} item={item} />
   );
   return (
-    <ul className="list_wrap">
+    <ul className="home__content__list_wrap">
       {listItems}
     </ul>
   );
@@ -42,16 +42,16 @@ class HomeContent extends Component {
   render() {
 
     return (
-      <div className="home-content">
+      <div className="home__content">
         {/* card */}
-        <div className="card_list">
-          <p className="dynamic fl">精选动态</p>
-          <p className="sport_tips">运动Tips</p>
-          <p className="cool fr">潮玩潮动</p>
+        <div className="home__content__card_list">
+          <p className="home__content--dynamic fl">精选动态</p>
+          <p className="home__content--sport_tips">运动Tips</p>
+          <p className="home__content--cool fr">潮玩潮动</p>
         </div>
         {/* course list */}
-        <div className="course_list">
-          <div className="title_wrap">
+        <div className="home__content__course_list">
+          <div className="home__content__title_wrap">
             <h2>推荐课程</h2>
             <p></p>
           </div>
