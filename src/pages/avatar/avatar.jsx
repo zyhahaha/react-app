@@ -87,9 +87,9 @@ class Avatar extends Component {
 
   render() {
     return (
-      <div className="avatar-container">
+      <div className="avatar">
         {/* header */}
-        <div className="header">
+        <div className="avatar__header">
           <div className="head_wrap">
             <p className="fl">
               <img src={backImg} alt="" />
