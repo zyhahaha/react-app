@@ -102,7 +102,7 @@ class Avatar extends Component {
         {/* header card */}
         {this.state.avatarData.info && <HeaderCard infoData={this.state.avatarData.info}></HeaderCard>}
         {/* content */}
-        <div className="content">
+        <div className="avatar__content">
           {/* nav */}
           <div className="nav">
             <Link to="/avatar">
