@@ -40,7 +40,7 @@ class Menu extends Component {
             </ul>
           </div>
         </div>
-        <div className={this.props.isShowMenu ? 'show menu-drawer-overlay' : 'menu-drawer-overlay'}></div>
+        <div onClick={this.props.changeMenuStateClose} className={this.props.isShowMenu ? 'show menu-drawer-overlay' : 'menu-drawer-overlay'}></div>
       </div>
     )
   }

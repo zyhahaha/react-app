@@ -33,6 +33,12 @@ class Home extends Component {
     })
   }
 
+  changeMenuStateClose = isShowMenu => {
+    this.setState({
+      isShowMenu: false
+    })
+  }
+
   getHomeContentData(){
     http.get('/homeContentData').then(res => {
       let homeContentData = res.data.data;
@@ -54,7 +60,7 @@ class Home extends Component {
         {this.state.homeContentData.list && <HomeContent homeContentList={this.state.homeContentData.list} />}
         {/* menu */}
         {/* {this.state.isShowMenu && <Menu />} */}
-        {<Menu isShowMenu={this.state.isShowMenu} />}
+        {<Menu changeMenuStateClose={this.changeMenuStateClose} isShowMenu={this.state.isShowMenu} />}
       </div>
     );
   }
