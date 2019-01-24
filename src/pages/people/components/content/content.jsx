@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import http from '@/http/http.js';
+import React, { Component } from "react";
+import http from "@/http/http.js";
 // import { Link } from 'react-router-dom';
-import './content.less';
+import "./content.less";
 
-import likeImg from '@/assets/imgs/like.png';
+import likeImg from "@/assets/imgs/like.png";
 
 // import axios from 'axios';
 // import { peopleData } from '@/assets/api/api.js';
@@ -16,42 +16,34 @@ function ListItem(props) {
       <div className="people__wrap">
         <p className="people__title">{item.title}</p>
         <p className="people__portrait fl">
-          <span></span>
+          <span />
           {item.nickname}
-          </p>
+        </p>
         <p className="people__portrait fr">
           <span className="people__like">
             <img src={likeImg} alt="" />
           </span>
           {item.likeNum}
-          </p>
+        </p>
       </div>
     </li>
-  )
+  );
 }
 
 function ContentListFl(props) {
   const list = props.list;
-  const listItems = list.map((item, index) =>
+  const listItems = list.map((item, index) => (
     <ListItem key={index.toString()} item={item} />
-  );
-  return (
-    <ul className="fl">
-      {listItems}
-    </ul>
-  );
+  ));
+  return <ul className="fl">{listItems}</ul>;
 }
 
 function ContentListFr(props) {
   const list = props.list;
-  const listItems = list.map((item, index) =>
+  const listItems = list.map((item, index) => (
     <ListItem key={index.toString()} item={item} />
-  );
-  return (
-    <ul className="fr">
-      {listItems}
-    </ul>
-  );
+  ));
+  return <ul className="fr">{listItems}</ul>;
 }
 
 class PeopleContent extends Component {
@@ -62,15 +54,15 @@ class PeopleContent extends Component {
 
   state = {
     peopleData: {}
-  }
+  };
 
   getPeopleData() {
-    http.get('/peopleData').then(res => {
-        let peopleData = res.data.data;
-        this.setState({
-          peopleData
-        })
+    http.get("/peopleData").then(res => {
+      let peopleData = res.data.data;
+      this.setState({
+        peopleData
       });
+    });
   }
   // return axios.get('http://localhost:8088/peopleData').then(res => {
   //   let peopleData = res.data.data;
@@ -78,10 +70,13 @@ class PeopleContent extends Component {
   render() {
     return (
       <div className="people__content">
-        {this.state.peopleData.list && <ContentListFl list={this.state.peopleData.list} />}
-        {this.state.peopleData.list && <ContentListFr list={this.state.peopleData.list} />}
+        {this.state.peopleData.list && (
+          <ContentListFl list={this.state.peopleData.list} />
+        )}
+        {this.state.peopleData.list && (
+          <ContentListFr list={this.state.peopleData.list} />
+        )}
       </div>
-
     );
   }
 }
